@@ -3,7 +3,7 @@ Smooth Scroll
 
 A jQuery plugin for scrolling to a page element smoothly.
 
-
+[minified version](dist/js/smooth-scroll.min.js)
 
 ## Example
 
