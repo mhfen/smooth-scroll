@@ -3,6 +3,9 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    util: {
+      separator: grunt.util.linefeed
+    },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -14,7 +17,13 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        banner: '/* <%= pkg.name %> - <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> EST */\n',
+        banner: '/* ========================================================================' + '<%= util.separator %>' +
+                '* smooth-scroll.js v'+'<%= pkg.version %>' + '<%= util.separator %>' +
+                '* https://github.com/mhfen/smooth-scroll.git' + '<%= util.separator %>' +
+                '* ========================================================================' + '<%= util.separator %>' +
+                '* Copyright 2014 Matt Fender' + '<%= util.separator %>' +
+                '* License: (https://github.com/mhfen/smooth-scroll/blob/master/LICENSE)' + '<%= util.separator %>' +
+                '* ======================================================================== */' + '<%= util.separator %>',
         sequences: false
       },
       js: {
